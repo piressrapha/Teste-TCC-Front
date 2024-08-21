@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovIA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #232380; /* Azul Marinho */
+            color: #fff; /* Texto branco para contraste */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            border-bottom: #ddd 3px solid;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .input-section, .result-section {
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #555;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MovIA</h1>
+        <form id="selection-form">
+            <label for="company">Empresa:</label>
+            <select id="company" name="company" required>
+                <option value="">Selecione uma empresa</option>
+                <option value="empresa1">Praça da bandeira</option>
+                <option value="empresa2">São José</option>
+                <option value="empresa3">MAG</option>
+            </select>
+
+            <label for="state">Estado:</label>
+            <select id="state" name="state" required>
+                <option value="">Selecione um estado</option>
+                <option value="sp">São Paulo</option>
+                <option value="rj">Rio de Janeiro</option>
+                <option value="mg">Minas Gerais</option>
+                <option value="es">Espírito Santo</option>
+            </select>
+
+            <button type="submit">Confirmar</button>
+        </form>
+    </header>
+    <div class="container">
+        <main>
+            <section class="input-section">
+                <h2>Selecione os Dados</h2>
+                <!-- Formulário movido para o header -->
+            </section>
+            <section class="result-section">
+                <h2>Resultado</h2>
+                <p id="prediction-result">A predição será exibida aqui.</p>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.getElementById('selection-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obter valores dos campos do formulário
+            const company = document.getElementById('company').value;
+            const state = document.getElementById('state').value;
+        }
+    </script>
+</body>
+</html>
